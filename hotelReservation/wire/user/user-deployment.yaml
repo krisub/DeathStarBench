@@ -28,7 +28,7 @@ spec:
       containers:
         - command:
             - user
-          image: divyanshus/hotelreservation:latest
+          image: krisub/hotelreservation:latest
           name: hotel-reserv-user
           ports:
             - containerPort: 8086
@@ -37,7 +37,7 @@ spec:
               cpu: 2000m
             limits:
               cpu: 4000m
-        - image: divyanshus/copper:non-init
+        - image: krisub/copper:non-init
           name: sidecar-bridge
           env:
           - name: RUST_LOG
@@ -53,7 +53,7 @@ spec:
                 SYS_ADMIN
           command: ["ebpf-bridge"]
           args: ["driver", "--config", "/configs/ebpf-bridge-config.yaml"]
-        - image: divyanshus/copper:non-init
+        - image: krisub/copper:non-init
           name: sidecar
           env:
           - name: RUST_LOG

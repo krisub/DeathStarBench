@@ -28,7 +28,7 @@ spec:
       containers:
         - command:
             - frontend
-          image: divyanshus/hotelreservation:latest
+          image: krisub/hotelreservation:latest
           name: hotel-reserv-frontend
           ports:
             - containerPort: 5000

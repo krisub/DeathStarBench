@@ -28,7 +28,7 @@ spec:
       containers:
         - command:
             - recommendation
-          image: divyanshus/hotelreservation:latest
+          image: krisub/hotelreservation:latest
           name: hotel-reserv-recommendation
           ports:
             - containerPort: 8085

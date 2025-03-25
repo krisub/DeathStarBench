@@ -6,7 +6,7 @@ ports:
  
 container:
   command: geo
-  image: divyanshus/hotelreservation
+  image: krisub/hotelreservation
   name: hotel-reserv-geo
   ports:
   - containerPort: 8083

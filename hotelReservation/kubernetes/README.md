@@ -36,7 +36,7 @@ cd <path-of-repo>/hotelReservation
 ./wrk -D exp -t <num-threads> -c <num-conns> -d <duration> -L -s ./wrk2_lua_scripts/mixed-workload_type_1.lua http://frontend.hotel-res.svc.cluster.local:5000 -R <reqs-per-sec>
 ```
 
-##### Example
+`##### Example
 ```bash
 cd /root/DeathStarBench/hotelReservation
 ./wrk -D exp -t 2 -c 2 -d 30 -L -s ./wrk2_lua_scripts/mixed-workload_type_1.lua http://frontend.hotel-res.svc.cluster.local:5000 -R 2 

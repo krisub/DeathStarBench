@@ -1,0 +1,32 @@
+ID             NAME                               MODE         REPLICAS   IMAGE                                                PORTS
+12g2rgbmjtob   socnetapp_cassandra                replicated   1/1        cassandra:3.9                                        
+hyqzyd4gz1ve   socnetapp_cassandra-schema         replicated   0/1        jaegertracing/jaeger-cassandra-schema:latest         
+w2noxt9wfwzw   socnetapp_compose-post-service     replicated   1/1        deathstarbench/social-network-microservices:latest   
+3jjeqw5koqy2   socnetapp_home-timeline-redis      replicated   1/1        redis:latest                                         
+ow733t47jvdy   socnetapp_home-timeline-service    replicated   1/1        deathstarbench/social-network-microservices:latest   
+2o2bu97btkju   socnetapp_jaeger-agent             replicated   1/1        jaegertracing/jaeger-agent:latest                    
+1qzhb70vlrzf   socnetapp_jaeger-collector         replicated   1/1        jaegertracing/jaeger-collector:latest                *:14269->14269/tcp
+j2hye91i2b8s   socnetapp_jaeger-query             replicated   1/1        jaegertracing/jaeger-query:latest                    *:16686->16686/tcp
+00647jvcpv7h   socnetapp_media-frontend           replicated   1/1        yg397/media-frontend:xenial                          *:8081->8080/tcp
+m6he14jz6wwm   socnetapp_media-memcached          replicated   1/1        memcached:latest                                     
+fbq9jk4vuvyj   socnetapp_media-mongodb            replicated   1/1        mongo:4.4.6                                          
+f4u9dgdp44ru   socnetapp_media-service            replicated   1/1        deathstarbench/social-network-microservices:latest   
+xz6qjvu29n26   socnetapp_nginx-web-server         replicated   1/1        yg397/openresty-thrift:xenial                        *:8080->8080/tcp
+4osrcc8o5dg4   socnetapp_post-storage-memcached   replicated   1/1        memcached:latest                                     
+hk38jnsb9sao   socnetapp_post-storage-mongodb     replicated   1/1        mongo:4.4.6                                          
+dbysy7juyp89   socnetapp_post-storage-service     replicated   1/1        deathstarbench/social-network-microservices:latest   
+w8jjicc5b6hx   socnetapp_social-graph-mongodb     replicated   1/1        mongo:4.4.6                                          
+2at7igz9v3m8   socnetapp_social-graph-redis       replicated   1/1        redis:latest                                         
+8wd50obl60gv   socnetapp_social-graph-service     replicated   1/1        deathstarbench/social-network-microservices:latest   
+tbkwmg73f8fe   socnetapp_text-service             replicated   1/1        deathstarbench/social-network-microservices:latest   
+z0k13sdqudpw   socnetapp_unique-id-service        replicated   1/1        deathstarbench/social-network-microservices:latest   
+tw8bqflzb3uj   socnetapp_url-shorten-memcached    replicated   1/1        memcached:latest                                     
+m7t72lvn5gas   socnetapp_url-shorten-mongodb      replicated   1/1        mongo:4.4.6                                          
+ruv438u8szij   socnetapp_url-shorten-service      replicated   1/1        deathstarbench/social-network-microservices:latest   
+1dt23i3doa21   socnetapp_user-memcached           replicated   1/1        memcached:latest                                     
+nni0f3c8qcyn   socnetapp_user-mention-service     replicated   1/1        deathstarbench/social-network-microservices:latest   
+pgnosroe5q8k   socnetapp_user-mongodb             replicated   1/1        mongo:4.4.6                                          
+8mztgbfzy5pb   socnetapp_user-service             replicated   1/1        deathstarbench/social-network-microservices:latest   
+bufbfrmrw5ct   socnetapp_user-timeline-mongodb    replicated   1/1        mongo:4.4.6                                          
+xn5np63xo50c   socnetapp_user-timeline-redis      replicated   1/1        redis:latest                                         
+be4u3eexw2k4   socnetapp_user-timeline-service    replicated   1/1        deathstarbench/social-network-microservices:latest   

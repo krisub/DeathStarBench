@@ -28,7 +28,7 @@ spec:
       containers:
         - command:
             - user
-          image: divyanshus/hotelreservation:latest
+          image: krisub/hotelreservation:latest
           name: hotel-reserv-user
           ports:
             - containerPort: 8086

@@ -39,7 +39,7 @@ spec:
           volumeMounts:
             - mountPath: /data/db
               name: rate
-        - image: divyanshus/copper:non-init
+        - image: krisub/copper:non-init
           name: sidecar-bridge
           env:
           - name: RUST_LOG
@@ -55,7 +55,7 @@ spec:
                 SYS_ADMIN
           command: ["ebpf-bridge"]
           args: ["driver", "--config", "/configs/ebpf-bridge-config.yaml"]
-        - image: divyanshus/copper:non-init
+        - image: krisub/copper:non-init
           name: sidecar
           env:
           - name: RUST_LOG

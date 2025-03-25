@@ -6,7 +6,7 @@ ports:
  
 container:
   command: recommendation
-  image: divyanshus/hotelreservation
+  image: krisub/hotelreservation
   name: hotel-reserv-recommendation
   ports:
   - containerPort: 8085

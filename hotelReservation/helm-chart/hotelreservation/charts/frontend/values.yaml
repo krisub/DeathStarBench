@@ -6,7 +6,7 @@ ports:
 
 container:
   command: frontend
-  image: divyanshus/hotelreservation
+  image: krisub/hotelreservation
   name: hotel-reserv-frontend
   ports:
   - containerPort: 5000
