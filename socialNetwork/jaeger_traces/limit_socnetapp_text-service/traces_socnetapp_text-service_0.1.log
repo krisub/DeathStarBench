@@ -1,40 +1,96 @@
 Running 30s test @ http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose
   8 threads and 1000 connections
 
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
-  Thread calibration: mean lat.: 9223372036854776.000ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 1326.816ms, rate sampling interval: 4521ms
+  Thread calibration: mean lat.: 758.156ms, rate sampling interval: 3461ms
+  Thread calibration: mean lat.: 1160.066ms, rate sampling interval: 5279ms
+  Thread calibration: mean lat.: 1373.520ms, rate sampling interval: 4812ms
+  Thread calibration: mean lat.: 1025.622ms, rate sampling interval: 3893ms
+  Thread calibration: mean lat.: 1395.230ms, rate sampling interval: 4956ms
+  Thread calibration: mean lat.: 875.630ms, rate sampling interval: 3483ms
+  Thread calibration: mean lat.: 1106.292ms, rate sampling interval: 4132ms
 Logging function completed.
 
 -----------------------------------------------------------------------
 Test Results @ http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose 
   Thread Stats   Avg      Stdev     99%   +/- Stdev
-    Latency     -nanus    -nanus   0.00us    0.00%
-    Req/Sec       -nan      -nan   0.00      0.00%
+    Latency    11.25s     4.04s   19.86s    72.75%
+    Req/Sec     9.62      4.85    19.00     73.53%
   Latency Distribution (HdrHistogram - Recorded Latency)
- 50.000%    0.00us
- 75.000%    0.00us
- 90.000%    0.00us
- 99.000%    0.00us
- 99.900%    0.00us
- 99.990%    0.00us
- 99.999%    0.00us
-100.000%    0.00us
+ 50.000%   10.00s 
+ 75.000%   12.82s 
+ 90.000%   17.83s 
+ 99.000%   19.86s 
+ 99.900%   20.35s 
+ 99.990%   22.77s 
+ 99.999%   22.77s 
+100.000%   22.77s 
 
   Detailed Percentile spectrum:
        Value   Percentile   TotalCount 1/(1-Percentile)
 
-       0.000     1.000000            0          inf
-#[Mean    =         -nan, StdDeviation   =         -nan]
-#[Max     =        0.000, Total count    =            0]
+    1453.055     0.000000            1         1.00
+    9682.943     0.100000          155         1.11
+   10002.431     0.200000          871         1.25
+   10002.431     0.300000          871         1.43
+   10002.431     0.400000          871         1.67
+   10002.431     0.500000          871         2.00
+   10002.431     0.550000          871         2.22
+   10010.623     0.600000         1044         2.50
+   10010.623     0.650000         1044         2.86
+   10846.207     0.700000         1082         3.33
+   12820.479     0.750000         1159         4.00
+   14073.855     0.775000         1198         4.44
+   15187.967     0.800000         1237         5.00
+   16138.239     0.825000         1275         5.71
+   16752.639     0.850000         1314         6.67
+   17186.815     0.875000         1352         8.00
+   17498.111     0.887500         1372         8.89
+   17825.791     0.900000         1393        10.00
+   18186.239     0.912500         1411        11.43
+   18431.999     0.925000         1430        13.33
+   18694.143     0.937500         1449        16.00
+   18792.447     0.943750         1459        17.78
+   18890.751     0.950000         1468        20.00
+   19021.823     0.956250         1478        22.86
+   19152.895     0.962500         1488        26.67
+   19300.351     0.968750         1497        32.00
+   19415.039     0.971875         1502        35.56
+   19480.575     0.975000         1507        40.00
+   19562.495     0.978125         1512        45.71
+   19611.647     0.981250         1518        53.33
+   19644.415     0.984375         1523        64.00
+   19693.567     0.985938         1524        71.11
+   19709.951     0.987500         1526        80.00
+   19824.639     0.989062         1529        91.43
+   19873.791     0.990625         1532       106.67
+   19906.559     0.992188         1533       128.00
+   19955.711     0.992969         1538       142.22
+   19955.711     0.993750         1538       160.00
+   19955.711     0.994531         1538       182.86
+   19955.711     0.995313         1538       213.33
+   19988.479     0.996094         1539       256.00
+   20004.863     0.996484         1540       284.44
+   20234.239     0.996875         1541       320.00
+   20234.239     0.997266         1541       365.71
+   20283.391     0.997656         1542       426.67
+   20283.391     0.998047         1542       512.00
+   20348.927     0.998242         1543       568.89
+   20348.927     0.998437         1543       640.00
+   20348.927     0.998633         1543       731.43
+   20479.999     0.998828         1544       853.33
+   20479.999     0.999023         1544      1024.00
+   20479.999     0.999121         1544      1137.78
+   20479.999     0.999219         1544      1280.00
+   20479.999     0.999316         1544      1462.86
+   22773.759     0.999414         1545      1706.67
+   22773.759     1.000000         1545          inf
+#[Mean    =    11249.759, StdDeviation   =     4040.783]
+#[Max     =    22757.376, Total count    =         1545]
 #[Buckets =           27, SubBuckets     =         2048]
 -----------------------------------------------------------------------
-  0 requests in 10.13s, 0.00B read
-  Socket errors: connect 0, read 0, write 0, timeout 3397
-Requests/sec:      0.00  
-Transfer/sec:       0.00B
+  2158 requests in 30.12s, 593.61KB read
+  Socket errors: connect 0, read 0, write 0, timeout 9679
+  Non-2xx or 3xx responses: 1348
+Requests/sec:     71.64  
+Transfer/sec:     19.71KB

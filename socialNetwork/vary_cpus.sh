@@ -6,15 +6,15 @@ run_workload() {
     sudo ../wrk2/wrk -D exp -t 8 -c 1000 -d 30s -L -s ./wrk2/scripts/social-network/compose-post.lua http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose -R 200 > "${output_path}"
 }
 
-# services=($(sudo docker service ls --format '{{.Name}}' | while read service; do
-#     image=$(sudo docker service inspect --format '{{.Spec.TaskTemplate.ContainerSpec.Image}}' "$service" | cut -d'@' -f1)
-#     if [[ "$image" == "deathstarbench/social-network-microservices:latest" ]]; then
-#         echo "$service"
-#     fi
-# done))
+services=($(sudo docker service ls --format '{{.Name}}' | while read service; do
+    image=$(sudo docker service inspect --format '{{.Spec.TaskTemplate.ContainerSpec.Image}}' "$service" | cut -d'@' -f1)
+    if [[ "$image" == "deathstarbench/social-network-microservices:latest" ]]; then
+        echo "$service"
+    fi
+done))
 
 # trying just one service...
-services=("socnetapp_text-service")
+# services=("socnetapp_text-service")
 total_services=${#services[@]}
 
 for service in "${services[@]}"; do
@@ -32,6 +32,7 @@ for service in "${services[@]}"; do
         cd ..
         
         run_workload "${cpu_limit}" "jaeger_traces/${output_dir}/traces_${service}_${cpu_limit}.log"
+        wait
         ./dump_jaeger.sh "${start_time}" "${output_dir}" "${cpu_limit}"
 
         echo "Waiting 5 seconds before next run..."
