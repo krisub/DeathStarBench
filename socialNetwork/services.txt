@@ -1,6 +1,6 @@
 ID             NAME                               MODE         REPLICAS   IMAGE                                                PORTS
 12g2rgbmjtob   socnetapp_cassandra                replicated   1/1        cassandra:3.9                                        
-hyqzyd4gz1ve   socnetapp_cassandra-schema         replicated   0/1        jaegertracing/jaeger-cassandra-schema:latest         
+dboe0i1xwctz   socnetapp_cassandra-schema         replicated   0/1        jaegertracing/jaeger-cassandra-schema:latest         
 w2noxt9wfwzw   socnetapp_compose-post-service     replicated   1/1        deathstarbench/social-network-microservices:latest   
 3jjeqw5koqy2   socnetapp_home-timeline-redis      replicated   1/1        redis:latest                                         
 ow733t47jvdy   socnetapp_home-timeline-service    replicated   1/1        deathstarbench/social-network-microservices:latest   

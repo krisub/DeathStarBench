@@ -1,0 +1,195 @@
+Running 30s test @ http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose
+  8 threads and 1000 connections
+
+  Thread calibration: mean lat.: 490.252ms, rate sampling interval: 1688ms
+  Thread calibration: mean lat.: 484.944ms, rate sampling interval: 1585ms
+  Thread calibration: mean lat.: 493.943ms, rate sampling interval: 1717ms
+  Thread calibration: mean lat.: 507.611ms, rate sampling interval: 1756ms
+  Thread calibration: mean lat.: 463.458ms, rate sampling interval: 1593ms
+  Thread calibration: mean lat.: 531.208ms, rate sampling interval: 1881ms
+  Thread calibration: mean lat.: 474.285ms, rate sampling interval: 1669ms
+  Thread calibration: mean lat.: 506.055ms, rate sampling interval: 1716ms
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+Logging function completed.
+
+-----------------------------------------------------------------------
+Test Results @ http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose 
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency     4.53s     5.25s   19.14s    72.78%
+    Req/Sec    21.53      5.57    34.00     79.78%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  743.93ms
+ 75.000%   10.00s 
+ 90.000%   10.13s 
+ 99.000%   19.14s 
+ 99.900%   20.56s 
+ 99.990%   22.17s 
+ 99.999%   22.17s 
+100.000%   22.17s 
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+       3.787     0.000000            1         1.00
+     175.487     0.100000          351         1.11
+     248.319     0.200000          701         1.25
+     321.535     0.300000         1051         1.43
+     427.263     0.400000         1401         1.67
+     743.935     0.500000         1751         2.00
+    2369.535     0.550000         1926         2.22
+    4546.559     0.600000         2101         2.50
+    6615.039     0.650000         2276         2.86
+    8724.479     0.700000         2451         3.33
+   10002.431     0.750000         3043         4.00
+   10002.431     0.775000         3043         4.44
+   10002.431     0.800000         3043         5.00
+   10002.431     0.825000         3043         5.71
+   10002.431     0.850000         3043         6.67
+   10010.623     0.875000         3140         8.00
+   10010.623     0.887500         3140         8.89
+   10133.503     0.900000         3151        10.00
+   11034.623     0.912500         3205        11.43
+   12083.199     0.925000         3239        13.33
+   13049.855     0.937500         3283        16.00
+   13590.527     0.943750         3305        17.78
+   14647.295     0.950000         3326        20.00
+   15523.839     0.956250         3348        22.86
+   16433.151     0.962500         3370        26.67
+   16941.055     0.968750         3392        32.00
+   17252.351     0.971875         3403        35.56
+   17481.727     0.975000         3414        40.00
+   17907.711     0.978125         3426        45.71
+   18268.159     0.981250         3436        53.33
+   18661.375     0.984375         3448        64.00
+   18825.215     0.985938         3453        71.11
+   18939.903     0.987500         3458        80.00
+   19070.975     0.989062         3463        91.43
+   19218.431     0.990625         3469       106.67
+   19431.423     0.992188         3475       128.00
+   19464.191     0.992969         3477       142.22
+   19529.727     0.993750         3480       160.00
+   19628.031     0.994531         3482       182.86
+   19742.719     0.995313         3485       213.33
+   19841.023     0.996094         3488       256.00
+   19857.407     0.996484         3489       284.44
+   19873.791     0.996875         3491       320.00
+   19955.711     0.997266         3492       365.71
+   19972.095     0.997656         3494       426.67
+   20332.543     0.998047         3495       512.00
+   20332.543     0.998242         3495       568.89
+   20463.615     0.998437         3496       640.00
+   20561.919     0.998633         3497       731.43
+   20561.919     0.998828         3497       853.33
+   20938.751     0.999023         3498      1024.00
+   20938.751     0.999121         3498      1137.78
+   21889.023     0.999219         3499      1280.00
+   21889.023     0.999316         3499      1462.86
+   21889.023     0.999414         3499      1706.67
+   21938.175     0.999512         3500      2048.00
+   21938.175     0.999561         3500      2275.56
+   21938.175     0.999609         3500      2560.00
+   21938.175     0.999658         3500      2925.71
+   21938.175     0.999707         3500      3413.33
+   22167.551     0.999756         3501      4096.00
+   22167.551     1.000000         3501          inf
+#[Mean    =     4531.093, StdDeviation   =     5252.242]
+#[Max     =    22151.168, Total count    =         3501]
+#[Buckets =           27, SubBuckets     =         2048]
+-----------------------------------------------------------------------
+  4522 requests in 30.02s, 1.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 9459
+  Non-2xx or 3xx responses: 774
+Requests/sec:    150.62  
+Transfer/sec:     34.42KB
