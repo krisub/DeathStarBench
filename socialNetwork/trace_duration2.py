@@ -26,10 +26,8 @@ def load_trace_from_file(file_path):
         return None
 
 def process_json_files(directory):
-    # Dictionary to store file paths grouped by filename
     files_by_name = {}
-    
-    # First, collect all JSON files and group them by filename
+
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith(".json"):
@@ -37,34 +35,28 @@ def process_json_files(directory):
                     files_by_name[file] = []
                 files_by_name[file].append(os.path.join(root, file))
     
-    # Sort filenames alphabetically
     sorted_filenames = sorted(files_by_name.keys())
-    
-    # Process files by name order
+
     for filename in sorted_filenames:
         for file_path in sorted(files_by_name[filename]):
             trace_data = load_trace_from_file(file_path)
             if trace_data:
-                # Extract service name from directory path
                 dir_match = re.search(r'limit_socnetapp_([^/]+)', file_path)
                 service_name = dir_match.group(1) if dir_match else "unknown-service"
-                
-                # Extract service name from filename for the second line
+
                 service_name_from_file = re.search(r'traces_([^_]+(?:-[^_]+)*)_\d+\.\d+\.json$', filename)
                 service_name_for_output = service_name_from_file.group(1) if service_name_from_file else "unknown-service"
                 
-                # Extract the decimal version
                 version_match = re.search(r'_(\d+\.\d+)\.json$', filename)
                 version = version_match.group(1) if version_match else "unknown-version"
                 
                 duration_ms = get_trace_duration(trace_data) / 1_000 
                 
-                # Print in the requested format
                 print(f"{service_name}")
                 print(f"{service_name_for_output}")
                 print(f"{version}")
                 print(f"{duration_ms:.3f}")
-                print()  # Empty line between entries
+                print()
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
