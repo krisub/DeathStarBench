@@ -12,16 +12,16 @@ cpu_limit="$3"
 # mkdir -p "${output_dir}"
 # cd ..
 
-for service in $(curl -s "http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:16686/api/services" | jq -r '.data[]'); do
+for service in $(curl -s "http://ms1311.utah.cloudlab.us:16686/api/services" | jq -r '.data[]'); do
     echo "Fetching traces for service: ${service}"
     
-    curl -s "http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:16686/api/traces?service=$service&start=$start_time&end=$end_time" \
+    curl -s "http://ms1311.utah.cloudlab.us:16686/api/traces?service=$service&start=$start_time&end=$end_time" \
         | jq '.' > "jaeger_traces/${output_dir}/traces_${service}_${cpu_limit}.json"
 done
 
 # service="compose-post-service"
 # echo "Fetching traces for service: ${service}"
-# sudo curl -s "http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:16686/api/traces?service=$service&start=$start_time&end=$end_time" \
+# sudo curl -s "http://ms1311.utah.cloudlab.us:16686/api/traces?service=$service&start=$start_time&end=$end_time" \
 #     | jq '.' > "jaeger_traces/${output_dir}/traces_${service}_${cpu_limit}.json"
 
 

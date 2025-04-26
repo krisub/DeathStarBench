@@ -1,9 +1,10 @@
 #!/bin/bash
+# exec -a vary_cpus.sh bash ./vary_cpus.sh
 
 run_workload() {
     echo "running workload with CPU limit: $1"
     output_path="$2"
-    sudo ../wrk2/wrk -D exp -t 8 -c 1000 -d 30s -L -s ./wrk2/scripts/social-network/compose-post.lua http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose -R 200 > "${output_path}"
+    sudo ../wrk2/wrk -D exp -t 8 -c 1000 -d 30s -L -s ./wrk2/scripts/social-network/compose-post.lua http://ms1311.utah.cloudlab.us:8080/wrk2-api/post/compose -R 200 > "${output_path}"
 }
 
 services=($(sudo docker service ls --format '{{.Name}}' | while read service; do
@@ -39,19 +40,31 @@ for service in "${services[@]}"; do
         start_time=$(($(date +%s%N)/1000))
 
         # run workload once after update (output prints to stdout)
-        sudo ../wrk2/wrk -D exp -t 8 -c 1000 -d 30s -L -s ./wrk2/scripts/social-network/compose-post.lua http://node0.krisub-247336.ldos-ut-pg0.wisc.cloudlab.us:8080/wrk2-api/post/compose -R 200
-
+        
+        sudo ../wrk2/wrk -D exp -t 8 -c 1000 -d 30s -L -s ./wrk2/scripts/social-network/compose-post.lua http://ms1311.utah.cloudlab.us:8080/wrk2-api/post/compose -R 200
+        
         # cd ./jaeger_traces
         # mkdir -p "${output_dir}"
         # cd ..
         ### traces_${service}_${cpu_limit}
         
+        
+        echo "starting profiler for trace_${service}_${cpu_limit}..."
+        sudo /users/krisub/LDOS/profiler.bt vary_cpus.sh > /users/krisub/LDOS/traces/trace_${service}_${cpu_limit}.txt &
+        BPF_PID=$!
+
         # run logged workload
         echo
+        echo "running workload..."
         run_workload "${cpu_limit}" "jaeger_traces/${output_dir}/traces_${cpu_limit}.log"
-        wait
+
+        kill -9 $BPF_PID 2>/dev/null || true
+        echo "profiler stopped..."
+        
         echo
+        echo "dumping jaeger traces for service '${service}' with CPU limit ${cpu_limit}..."
         sudo ./dump_jaeger.sh "${start_time}" "${output_dir}" "${cpu_limit}"
+        echo "jaeger traces dumped..."
         wait
         echo
         echo "next cpu limit..."
